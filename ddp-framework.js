@@ -72,7 +72,7 @@ connection.constructor.prototype.registerStore = function (name, wrappedStore) {
         var self = Mongo.Collection.get(name);
 
         /* unchanged meteor code */
-        var mongoId=LocalCollection._idParse(msg.id),doc=self._collection.findOne(mongoId);
+        var mongoId=MongoID.idParse(msg.id),doc=self._collection.findOne(mongoId);
         if (msg.msg === 'replace') {var replace=msg.replace;if(!replace){if(doc)self._collection.remove(mongoId);} else {
 
         // call intercept_in
