@@ -2,6 +2,8 @@
 /* 'global' package helpers */
 
 // intercept_* functions
+var debug = false;
+
 intercept_out = function (collection, container, callback) {
     if (Meteor.isClient) {
         Mongo.Collection.intercept.out(collection, container, callback);
